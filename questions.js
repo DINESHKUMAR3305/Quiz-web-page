@@ -1,28 +1,5 @@
 const questions = [
     {
-        type: 'text',
-        content: 'What is the capital of Tamilnadu',
-        answer: 'chennai'
-    },
-    {
-        type: 'radio',
-        content: 'Which one is the national fruit of India',
-        options: ['Apple', 'Carrot', 'Mango'],
-        answer: 'Mango'
-    },
-    {
-        type: 'checkbox',
-        content: 'Which of the following are programming languages?',
-        options: ['Python', 'HTML', 'CSS', 'Java'],
-        answer: ['Python', 'Java']
-    },
-    {
-        type: 'dropdown',
-        content: 'Select the largest continent in the world',
-        options: ['Australia', 'Africa', 'Asia'],
-        answer: 'Africa'
-    },
-    {
         type: 'radio',
         content: 'is 2 + 2 equal to 2 * 2',
         options: ['Yes','No'],
@@ -89,6 +66,29 @@ const questions = [
         content: 'Which of the following are primary colors?',
         options: ['Red', 'Orange', 'Green', 'Yellow','Blue'],
         answer: ['Red', 'Green','Blue']
+    },
+        {
+        type: 'text',
+        content: 'What is the capital of Tamilnadu',
+        answer: 'chennai'
+    },
+    {
+        type: 'radio',
+        content: 'Which one is the national fruit of India',
+        options: ['Apple', 'Carrot', 'Mango'],
+        answer: 'Mango'
+    },
+    {
+        type: 'checkbox',
+        content: 'Which of the following are programming languages?',
+        options: ['Python', 'HTML', 'CSS', 'Java'],
+        answer: ['Python', 'Java']
+    },
+    {
+        type: 'dropdown',
+        content: 'Select the largest continent in the world',
+        options: ['Australia', 'Africa', 'Asia'],
+        answer: 'Africa'
     },
     {
         type: 'text',
