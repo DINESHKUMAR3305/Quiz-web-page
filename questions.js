@@ -67,7 +67,7 @@ const questions = [
         options: ['Red', 'Orange', 'Green', 'Yellow','Blue'],
         answer: ['Red', 'Green','Blue']
     },
-        {
+    {
         type: 'text',
         content: 'What is the capital of Tamilnadu',
         answer: 'chennai'
