@@ -15,7 +15,6 @@ function startTimer() {
         const seconds = timeRemaining % 60;
         document.getElementById('time').textContent = 
             `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        
         if (timeRemaining <= 0) {
             clearInterval(timer);
             submitQuiz();
