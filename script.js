@@ -1,6 +1,6 @@
 let currentPage = 0;
 let timer;
-let timeRemaining = 180; // 3 minutes in seconds
+let timeRemaining = 180; 
 let userAnswers = {};
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -168,5 +168,5 @@ function submitQuiz() {
 
     const timeTaken = 180 - timeRemaining;
     alert(`Your score is ${score} out of ${answeredQuestions}.\nTime taken: ${Math.floor(timeTaken / 60)} minutes and ${timeTaken % 60} seconds.`);
-    window.location.reload(); // Optionally, reload the page after submission
+    window.location.reload();
 }
