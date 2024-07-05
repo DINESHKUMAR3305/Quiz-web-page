@@ -1,23 +1,12 @@
 let currentPage = 0;
 let timer;
-let timeRemaining = 180; 
+let timeRemaining = 180; // 3 minutes in seconds
 let userAnswers = {};
-let questions = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetchQuestions();
+    loadQuestions();
     startTimer();
 });
-
-function fetchQuestions() {
-    fetch('questions.json')
-        .then(response => response.json())
-        .then(data => {
-            questions = data;
-            loadQuestions();
-        })
-        .catch(error => console.error('Error loading questions:', error));
-}
 
 function startTimer() {
     timer = setInterval(() => {
@@ -26,6 +15,7 @@ function startTimer() {
         const seconds = timeRemaining % 60;
         document.getElementById('time').textContent = 
             `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        
         if (timeRemaining <= 0) {
             clearInterval(timer);
             submitQuiz();
@@ -50,7 +40,7 @@ function displayPage() {
         questionElement.className = 'question';
 
         const label = document.createElement('label');
-        label.textContent = `${i + 1}. ${question.content}`;
+        label.textContent = question.content;
         questionElement.appendChild(label);
 
         if (question.type === 'text') {
@@ -178,5 +168,5 @@ function submitQuiz() {
 
     const timeTaken = 180 - timeRemaining;
     alert(`Your score is ${score} out of ${answeredQuestions}.\nTime taken: ${Math.floor(timeTaken / 60)} minutes and ${timeTaken % 60} seconds.`);
-    window.location.reload();
+    window.location.reload(); // Optionally, reload the page after submission
 }
