@@ -11,12 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function fetchQuestions() {
     fetch('questions.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
+        .then(response => response.json())
         .then(data => {
             questions = data;
             loadQuestions();
@@ -55,7 +50,7 @@ function displayPage() {
         questionElement.className = 'question';
 
         const label = document.createElement('label');
-        label.textContent = question.content;
+        label.textContent = `${i + 1}. ${question.content}`;
         questionElement.appendChild(label);
 
         if (question.type === 'text') {
