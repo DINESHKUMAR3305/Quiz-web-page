@@ -2,11 +2,22 @@ let currentPage = 0;
 let timer;
 let timeRemaining = 180; 
 let userAnswers = {};
+let questions = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadQuestions();
+    fetchQuestions();
     startTimer();
 });
+
+function fetchQuestions() {
+    fetch('questions.json')
+        .then(response => response.json())
+        .then(data => {
+            questions = data;
+            loadQuestions();
+        })
+        .catch(error => console.error('Error loading questions:', error));
+}
 
 function startTimer() {
     timer = setInterval(() => {
